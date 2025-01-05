@@ -24,6 +24,7 @@ export default function App() {
       <View
         style={{
           position: "relative",
+          backgroundColor: "red",
         }}
       >
         <Image
@@ -37,6 +38,7 @@ export default function App() {
         />
         <BlurView
           intensity={500}
+          experimentalBlurMethod="dimezisBlurView"
           style={{
             position: "absolute",
             bottom: 0,
