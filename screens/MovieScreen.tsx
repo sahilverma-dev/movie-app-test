@@ -2,10 +2,20 @@ import { View, Text, Image, Button } from "react-native";
 import { Movie } from "../interfaces";
 import { getPoster } from "../utils";
 import { useNavigation } from "@react-navigation/native";
+import {
+  MovieScreenProps,
+  RootStackParamList,
+} from "../navigation/StackNavigation";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
-const MovieScreen = (props: any) => {
-  const movie: Movie = props?.route?.params?.movie;
-  const { goBack } = useNavigation();
+type MovieNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  "Movie"
+>;
+
+const MovieScreen = ({ route }: MovieScreenProps) => {
+  const movie: Movie = route?.params?.movie;
+  const { goBack } = useNavigation<MovieNavigationProp>();
 
   return (
     <View>
