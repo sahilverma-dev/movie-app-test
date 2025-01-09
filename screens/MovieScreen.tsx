@@ -8,7 +8,7 @@ import {
 } from "../navigation/StackNavigation";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
-type MovieNavigationProp = NativeStackNavigationProp<
+export type MovieNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
   "Movie"
 >;

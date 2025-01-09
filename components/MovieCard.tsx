@@ -3,13 +3,14 @@ import { View, Image, TouchableOpacity } from "react-native";
 import { getPoster } from "../utils";
 import { Movie } from "../interfaces";
 import { useNavigation } from "@react-navigation/native";
+import { MovieNavigationProp } from "../screens/MovieScreen";
 
 interface Props {
   movie: Movie;
 }
 
 const MovieCard: React.FC<Props> = ({ movie }) => {
-  const { navigate } = useNavigation();
+  const { navigate } = useNavigation<MovieNavigationProp>();
   return (
     <TouchableOpacity
       onPress={() => {

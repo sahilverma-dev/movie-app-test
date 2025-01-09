@@ -1,13 +1,13 @@
-import { createStaticNavigation } from "@react-navigation/native";
 import {
   createNativeStackNavigator,
   NativeStackScreenProps,
 } from "@react-navigation/native-stack";
 
+import { Movie } from "../interfaces";
+
 // screens
 import HomeScreen from "../screens/HomeScreen";
 import MovieScreen from "../screens/MovieScreen";
-import { Movie } from "../interfaces";
 
 // types
 export type RootStackParamList = {
@@ -25,7 +25,7 @@ export type MovieScreenProps = NativeStackScreenProps<
   "Movie"
 >;
 
-const RootStack = createNativeStackNavigator<RootStackParamList>({
+export const RootStack = createNativeStackNavigator<RootStackParamList>({
   initialRouteName: "Home",
   screens: {
     Home: HomeScreen,
@@ -33,5 +33,3 @@ const RootStack = createNativeStackNavigator<RootStackParamList>({
   },
   screenOptions: { headerShown: false },
 });
-
-export const Navigation = createStaticNavigation(RootStack);
